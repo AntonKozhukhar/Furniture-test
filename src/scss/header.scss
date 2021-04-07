@@ -1,0 +1,259 @@
+//====================================================================================================
+.header {
+  a {
+    color: #1e2e36;
+  }
+  font-weight: bold;
+  &__top {
+    border-bottom: 1px solid rgba(30, 46, 54, 0.6);
+    padding: 25px 0;
+  }
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__content-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: $md1+px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  &__contacts {
+    display: flex;
+  }
+  &__socials {
+    display: flex;
+    @media (max-width: $md1+px) {
+      display: block;
+    }
+    &-icons {
+      display: flex;
+      @media (max-width: $md1+px) {
+        margin: 10px 0;
+      }
+      a {
+        color: #1e2e36;
+        margin-right: 30px;
+        transition: 0.3s;
+        &:last-child {
+          margin-right: 0;
+        }
+        @media (min-width: $md3+px) {
+          &:hover {
+            color: #44c697;
+          }
+        }
+      }
+    }
+    span {
+      margin-right: 15px;
+    }
+  }
+
+  &__phones {
+    color: #1e2e36;
+    display: flex;
+    cursor: pointer;
+    margin-left: 60px;
+    @media (max-width: $md1+px) {
+      margin: 0;
+    }
+  }
+  &__phone {
+    margin-left: 5px;
+    position: relative;
+    padding-right: 20px;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      border-bottom: 2px solid #1e2e36;
+      border-right: 2px solid #1e2e36;
+      width: 10px;
+      height: 10px;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__menu {
+    text-transform: uppercase;
+    display: flex;
+    @media (max-width: $md2+px) {
+      display: block;
+      text-align: center;
+    }
+    @media (max-width: $md3+px) {
+      position: fixed;
+      top: -100%;
+      right: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #1e2e36;
+      z-index: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: 0.5s;
+      a {
+        color: #fff;
+      }
+    }
+    &._active {
+      display: flex;
+      top: 0;
+      right: 0;
+    }
+    li {
+      margin-right: 15px;
+      transition: 0.3s;
+      @media (max-width:$md3+px){
+        margin: 0 0 20px 0;
+      }
+      @media (min-width: $md3+px) {
+        height: 22px;
+        &:hover {
+          border-bottom: 3px solid #44c697;
+        }
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &__bottom {
+    padding: 15px 0;
+  }
+  &__list {
+    text-transform: uppercase;
+    display: flex;
+    @media (max-width: $md1+px) {
+      margin-top: 20px;
+      order: 1;
+    }
+    @media (max-width:$md3+px){
+      display: none;
+    }
+    li {
+      margin-right: 20px;
+      position: relative;
+      &:last-child {
+        margin: 0;
+      }
+      a {
+        padding-right: 20px;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 2px;
+          right: 2px;
+          border-bottom: 2px solid #1e2e36;
+          border-right: 2px solid #1e2e36;
+          width: 10px;
+          height: 10px;
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+  &__logo {
+    @media (max-width: $md1+px) {
+      align-self: flex-start;
+      img {
+        width: 90%;
+      }
+    }
+    @media (max-width:$md3+px){
+      align-self: stretch;
+      margin-bottom: 20px;
+    }
+  }
+  &__call {
+    display: flex;
+    align-items: center;
+    @media (max-width: $md1+px) {
+      align-self: flex-end;
+      margin-top: -55px;
+    }
+    @media (max-width:$md3+px){
+      align-self: center;
+      margin: 0;
+    }
+  }
+  &__shop {
+    padding-left: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 30px;
+    @media (min-width: $md3+px) {
+      &:hover {
+        color: #44c697;
+      }
+    }
+  }
+  &__icon-shop {
+    transition: 0.3s;
+    @media (min-width: $md3+px) {
+      &:hover {
+        color: #44c697;
+      }
+    }
+  }
+}
+//====================================================================================================
+
+//Burger
+.header__burger {
+  display: none;
+  @media (max-width: $md3+px) {
+    display: block;
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 2;
+    span {
+      transition: all 0.3s ease 0s;
+      transition-delay: 0.2s;
+      top: calc(50% - 1px);
+      left: 0px;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #1e2e36;
+      border-radius: 2px;
+      &:first-child {
+        top: 0px;
+      }
+      &:last-child {
+        top: auto;
+        bottom: 0px;
+      }
+    }
+    &._active {
+      &::before {
+        left: -20px;
+        bottom: -25px;
+      }
+      span {
+        transform: scale(0);
+        background-color: #fff;
+        &:first-child {
+          transform: rotate(-45deg);
+          top: calc(50% - 1px);
+        }
+        &:last-child {
+          transform: rotate(45deg);
+          bottom: calc(50% - 1px);
+        }
+      }
+    }
+  }
+}

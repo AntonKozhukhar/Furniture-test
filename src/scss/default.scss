@@ -1,0 +1,104 @@
+.btn {
+  background: #44c697;
+  color: #fff;
+  display: inline-block;
+  padding: 14px 46px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.swiper-pagination {
+  padding-bottom: 15px;
+  &-bullet {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border: 1px solid #fff;
+  }
+}
+
+.arrow-left {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #1e2e36;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+  @media (min-width: $md3+px) {
+    &:hover {
+      background: #1e2e36;
+    }
+    &:hover::before {
+      border-top: 2px solid #fff;
+      border-left: 2px solid #fff;
+    }
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid #1e2e36;
+    border-left: 2px solid #1e2e36;
+    transform: rotate(-45deg);
+    top: 8px;
+    left: 10px;
+    border-radius: 2px;
+  }
+}
+.arrow-right {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #1e2e36;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+  @media (min-width: $md3+px) {
+    &:hover {
+      background: #1e2e36;
+    }
+    &:hover::before {
+      border-top: 2px solid #fff;
+      border-left: 2px solid #fff;
+    }
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid #1e2e36;
+    border-left: 2px solid #1e2e36;
+    transform: rotate(135deg);
+    left: 6px;
+    top: 8px;
+    border-radius: 2px;
+  }
+}
+
+.title {
+  font-weight: bold;
+  position: relative;
+  margin: 100px 0 50px 0;
+  text-align: center;
+  text-transform: uppercase;
+  &::before {
+    content: '';
+    position: absolute;
+    border-left: 17px solid #44c697;
+    height: 100%;
+    z-index: -1;
+    @media (max-width:$md2+px){
+      border-left: 10px solid #44c697;
+    }
+  }
+  @include adaptive-font(48, 24);
+  @media (max-width:$md2+px){
+    margin: 50px 0 30px 0;
+  }
+}
+
